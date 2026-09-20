@@ -125,15 +125,20 @@
   }
 
   .eyebrow{
-    font-size:clamp(11px,min(1.8vh,3.2vw),13px);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:5px 14px;
+    border-radius:999px;
+    background:rgba(99,102,241,0.12);
+    border:1px solid rgba(139,92,246,0.28);
+    box-shadow:0 0 16px rgba(99,102,241,0.18);
+    font-size:clamp(10px,1.6vh,12px);
     font-weight:700;
-    letter-spacing:0.32em;
+    letter-spacing:0.22em;
     text-transform:uppercase;
-    background:linear-gradient(90deg,#5ad0ff,#b48cff);
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-    margin-bottom:clamp(8px,1.4vh,14px);
+    color:#93c5fd;
+    margin-bottom:clamp(10px,1.8vh,16px);
   }
 
   .headline{
@@ -158,6 +163,7 @@
     height:3px;
     border-radius:3px;
     background:linear-gradient(90deg,#3aa8ff,#a855f7);
+    box-shadow:0 0 12px rgba(168,85,247,0.4);
     margin:0 auto clamp(16px,2.5vh,28px);
   }
 
@@ -177,14 +183,14 @@
     flex:0 0 auto;
   }
   .feature-icon{
-    width:clamp(44px,6.8vh,62px);
-    height:clamp(44px,6.8vh,62px);
-    border-radius:50%;
+    width:clamp(46px,7vh,62px);
+    height:clamp(46px,7vh,62px);
+    border-radius:18px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:radial-gradient(circle at 35% 30%, rgba(58,168,255,0.22), rgba(15,18,36,0.92));
-    border:1px solid rgba(255,255,255,0.12);
+    background:radial-gradient(circle at 35% 30%, rgba(58,168,255,0.25), rgba(15,18,36,0.92));
+    border:1px solid rgba(255,255,255,0.14);
     box-shadow:0 8px 24px rgba(0,0,0,0.45), 0 0 16px rgba(58,168,255,0.2);
     backdrop-filter:blur(8px);
     -webkit-backdrop-filter:blur(8px);
@@ -209,16 +215,16 @@
     align-items:center;
     justify-content:center;
     gap:12px;
-    background:linear-gradient(180deg, #ffffff 0%, #f2f4fa 100%);
+    background:linear-gradient(180deg, #ffffff 0%, #f0f3fa 100%);
     color:#070913;
     font-weight:700;
     font-size:clamp(14px,2vh,17px);
     padding:clamp(14px,2.2vh,18px) clamp(26px,5vw,36px);
     border-radius:999px;
-    border:1px solid rgba(255,255,255,0.85);
+    border:1px solid rgba(255,255,255,0.9);
     box-shadow:
-      0 16px 36px -6px rgba(0,0,0,0.55),
-      0 0 28px rgba(99,102,241,0.3),
+      0 16px 36px -6px rgba(0,0,0,0.6),
+      0 0 30px rgba(99,102,241,0.35),
       inset 0 1px 0 #ffffff;
     width:max-content;
     cursor:pointer;
@@ -229,12 +235,12 @@
   .cta:hover{
     transform:translateY(-2px);
     box-shadow:
-      0 22px 44px -6px rgba(0,0,0,0.65),
-      0 0 38px rgba(99,102,241,0.45),
+      0 22px 44px -6px rgba(0,0,0,0.7),
+      0 0 40px rgba(99,102,241,0.5),
       inset 0 1px 0 #ffffff;
   }
   .cta:active{
-    transform:translateY(1px);
+    transform:scale(0.97);
     box-shadow:
       0 8px 20px -4px rgba(0,0,0,0.5),
       0 0 20px rgba(99,102,241,0.25);
@@ -252,24 +258,30 @@
   }
 
   /* ---------------- phone mockup ---------------- */
+  @keyframes phoneFloat{
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+  }
+
   .phone-wrap{
     position:relative;
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-top:clamp(24px,4vh,44px);
+    margin-top:clamp(28px,4.5vh,48px);
   }
   /* Radiant ambient glow behind phone */
   .phone-wrap::before{
     content:"";
     position:absolute;
-    width:82%;
-    height:72%;
-    border-radius:48px;
-    background:radial-gradient(circle at 50% 50%, rgba(139,92,246,0.45), rgba(59,130,246,0.22) 55%, transparent 72%);
-    filter:blur(36px);
+    width:85%;
+    height:75%;
+    border-radius:54px;
+    background:radial-gradient(ellipse at 50% 50%, rgba(139,92,246,0.5) 0%, rgba(59,130,246,0.28) 45%, rgba(232,121,201,0.12) 72%, transparent 80%);
+    filter:blur(42px);
     z-index:-1;
     pointer-events:none;
+    transform:translateZ(0);
   }
   .phone-wrap img{
     width:auto;
@@ -277,15 +289,15 @@
     max-width:min(320px, 80vw);
     max-height:500px;
     filter:
-      drop-shadow(0 24px 48px rgba(0,0,0,0.75))
-      drop-shadow(0 0 32px rgba(120,80,240,0.3));
-    transition:transform 0.35s ease;
+      drop-shadow(0 28px 52px rgba(0,0,0,0.8))
+      drop-shadow(0 0 36px rgba(120,80,240,0.35));
+    animation:phoneFloat 7s ease-in-out infinite;
   }
 
   .cta-top{ display:none; }
   .cta-bottom{
     display:inline-flex;
-    margin:clamp(36px,5.5vh,54px) auto 0 !important;
+    margin:clamp(48px,7.5vh,68px) auto 0 !important;
   }
 
   .annotation{
@@ -295,19 +307,19 @@
     font-weight:700;
     line-height:1.25;
     white-space:nowrap;
+    display:none;
   }
   .annotation.note-1{ color:#e879c9; top:-9%; left:-6%; text-align:right; }
   .annotation.note-2{ color:#b98bff; bottom:13%; right:-9%; text-align:left; }
   .annotation svg{ position:absolute; width:56px; height:56px; }
   .annotation.note-1 svg{ right:-46px; top:30px; transform:scaleX(-1); }
   .annotation.note-2 svg{ left:-46px; bottom:28px; }
-  .annotation{ display:none; }
 
   /* ---------------- footer ---------------- */
   .footer-caption{
     text-align:center;
-    margin-top:clamp(28px,4.5vh,48px);
-    margin-bottom:clamp(16px,2.5vh,32px);
+    margin-top:clamp(32px,5vh,52px);
+    margin-bottom:clamp(20px,3vh,36px);
     flex:0 0 auto;
   }
   .footer-caption .fc-divider{
@@ -317,7 +329,7 @@
     border-radius:2px;
   }
   .footer-caption .fc-tagline{
-    font-size:clamp(9px,1.2vh,12px);
+    font-size:clamp(10px,1.3vh,12px);
     letter-spacing:0.22em;
     text-transform:uppercase;
     color:var(--text-2);
@@ -332,12 +344,12 @@
   }
   .legal-link{
     font-size:clamp(12px,1.5vh,14px);
-    color:rgba(255,255,255,0.6);
+    color:rgba(255,255,255,0.65);
     text-decoration:none;
     font-weight:500;
     letter-spacing:0.02em;
-    padding:4px 8px;
-    border-radius:6px;
+    padding:6px 12px;
+    border-radius:8px;
     transition:color 0.2s ease, background 0.2s ease;
   }
   .legal-link:hover{
@@ -347,6 +359,54 @@
   .legal-sep{
     color:rgba(255,255,255,0.28);
     font-size:11px;
+  }
+
+  /* =========================================================
+     SMARTPHONE SPECIFIC (< 768px)
+     ========================================================= */
+  @media (max-width:767px){
+    .page{ padding:0 var(--sp-4); }
+    .hero{ padding:28px var(--sp-3) 48px; }
+    .headline{
+      font-size:clamp(30px,8.2vw,40px);
+      margin-bottom:18px;
+    }
+    .divider{ margin-bottom:24px; }
+    .features{
+      gap:14px;
+      margin-bottom:28px;
+    }
+    .feature-item{
+      width:auto;
+      min-width:86px;
+      max-width:104px;
+    }
+    .feature-icon{
+      width:52px;
+      height:52px;
+      border-radius:16px;
+    }
+    .feature-item span{
+      font-size:12px;
+      margin-top:2px;
+    }
+    .phone-wrap{
+      margin-top:32px;
+    }
+    .phone-wrap img{
+      width:min(295px, 80vw);
+      max-height:470px;
+    }
+    /* Generous spacing between phone image and download button on smartphone */
+    .cta-bottom{
+      margin-top:54px !important;
+      padding:16px 34px;
+      font-size:16px;
+    }
+    .footer-caption{
+      margin-top:44px;
+      margin-bottom:28px;
+    }
   }
 
   /* =========================================================
