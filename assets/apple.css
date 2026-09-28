@@ -35,6 +35,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 img { display: block; max-width: 100%; height: auto; }
+picture { display: contents; } /* <picture> chỉ để chọn định dạng (AVIF/WebP), không tham gia bố cục */
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
@@ -97,12 +98,9 @@ code { font: .88em/1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 
   display: flex; justify-content: center; align-items: flex-start; gap: 28px;
   margin: 56px auto 0; max-width: var(--content-max); height: 520px; overflow: hidden;
 }
-.shots img { width: 240px; margin-top: 64px; border-radius: 28px 28px 0 0; box-shadow: var(--shadow-product); }
-.shots img.lead { width: 280px; margin-top: 0; }
-.shots .mock { width: 300px; height: auto; margin-top: 0; border-radius: 0; box-shadow: none; filter: drop-shadow(3px 5px 30px rgba(0, 0, 0, .22)); }
-.shots .framed { border-radius: 0; box-shadow: none; }
-.shots.pair img { width: 260px; margin-top: 0; }
-.shots.free { height: auto; overflow: visible; }
+.shots img { width: 250px; margin-top: 64px; filter: drop-shadow(3px 5px 30px rgba(0, 0, 0, .22)); }
+.shots img.lead { width: 292px; margin-top: 0; }
+.shots.pair img { width: 272px; margin-top: 0; }
 .hero.has-mock { padding-bottom: 64px; }
 .hero + .section, .hero + .doc { border-top: 0; }
 
@@ -189,8 +187,8 @@ code { font: .88em/1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 
   .hero h1, .display { font-size: 48px; }
   .features { grid-template-columns: 1fr; gap: 32px; max-width: var(--text-max); }
   .shots { height: 440px; }
-  .shots img { width: 200px; }
-  .shots img.lead { width: 232px; }
+  .shots img { width: 208px; }
+  .shots img.lead { width: 242px; }
   .features { text-align: center; }
 }
 @media (max-width: 600px) {
@@ -204,10 +202,9 @@ code { font: .88em/1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 
   .actions { gap: 12px; }
   .shots { gap: 12px; margin-top: 40px; height: 400px; }
   .shots img.side { display: none; }
-  .shots img.lead { width: 66%; margin-top: 0; border-radius: 24px 24px 0 0; }
+  .shots img.lead { width: 70%; margin-top: 0; }
   .shots.pair { height: 360px; }
-  .shots.pair img { display: block; width: 46%; }
-  .shots .mock { width: 72%; }
+  .shots.pair img { display: block; width: 47%; }
   .section { padding: 72px var(--gutter) 64px; }
   .section h2, .contact h2 { font-size: 32px; }
   .doc-head { padding: 48px var(--gutter) 40px; }
